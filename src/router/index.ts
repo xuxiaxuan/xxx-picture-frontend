@@ -1,5 +1,9 @@
+import UserManagePage from '@/pages/admin/UserManagePage.vue'
 import HomePage from '@/pages/HomePage.vue'
+import UserLoginPage from '@/pages/user/UserLoginPage.vue'
+import UserRegisterPage from '@/pages/user/UserRegisterPage.vue'
 import HomeView from '@/views/HomeView.vue'
+import UserCenterPage from '@/pages/user/UserCenterPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -11,12 +15,32 @@ const router = createRouter({
       component: HomePage,
     },
     {
+      path: '/user/login',
+      name: '用户登录',
+      component: UserLoginPage,
+    },
+    {
+      path: '/user/register',
+      name: '用户注册',
+      component: UserRegisterPage,
+    },
+    {
+      path: '/admin/userManage',
+      name: '用户管理',
+      component: UserManagePage,
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/user/center',
+      name: '个人中心',
+      component: UserCenterPage,
     },
   ],
 })

@@ -1,4 +1,5 @@
 import "ant-design-vue/dist/reset.css";
+import '@/access'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
