@@ -99,6 +99,16 @@ const originItems = [
     title: '主页',
   },
   {
+  key: '/add_picture',
+  label: '创建图片',
+  title: '创建图片',
+},
+  {
+      key: '/admin/pictureManage',
+      label: '图片管理',
+      title: '图片管理',
+    },
+  {
     key: '/admin/userManage',
     label: '用户管理',
     title: '用户管理',
