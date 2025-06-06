@@ -4,13 +4,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  // server: {
-  //   proxy: {
-  //     '/api': 'http://localhost:9123'
-  //   }
-  // },
   plugins: [
     vue(),
     vueDevTools(),
@@ -18,6 +13,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
+    }
   },
+  server: {
+    proxy: {
+      '/ai': {
+        target: 'http://localhost:8090',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 })
